@@ -1,0 +1,14 @@
+application:
+  name: dendrite
+  pods:
+  - name: app
+    image: ghcr.io/matrix-org/dendrite-monolith:latest
+    path: /
+    servicePorts:
+    - 8008
+    vars:
+      DENDRITE_SERVER_NAME: relaxed-weasel-dendrite.cloud.nexlayer.ai
+    volumes:
+    - name: dendrite-data
+      mountPath: /etc/dendrite
+      size: 5Gi
