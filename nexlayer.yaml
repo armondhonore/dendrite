@@ -2,19 +2,19 @@ application:
   name: dendrite
   pods:
   - name: app
-    image: ghcr.io/famedly/conduit:latest
+    image: ghcr.io/girlbossceo/conduwuit:main
     path: /
     servicePorts:
     - 6167
     vars:
-      CONDUIT_SERVER_NAME: relaxed-weasel-dendrite.cloud.nexlayer.ai
-      CONDUIT_DATABASE_BACKEND: rocksdb
-      CONDUIT_DATABASE_PATH: /var/lib/conduit
-      CONDUIT_PORT: "6167"
-      CONDUIT_ALLOW_REGISTRATION: "true"
-      CONDUIT_ALLOW_FEDERATION: "false"
-      CONDUIT_CONFIG: ""
+      CONDUWUIT_SERVER_NAME: relaxed-weasel-dendrite.cloud.nexlayer.ai
+      CONDUWUIT_DATABASE_BACKEND: rocksdb
+      CONDUWUIT_DATABASE_PATH: /var/lib/conduwuit
+      CONDUWUIT_PORT: "6167"
+      CONDUWUIT_ALLOW_REGISTRATION: "true"
+      CONDUWUIT_ALLOW_FEDERATION: "false"
+      CONDUWUIT_CONFIG: ""
     volumes:
     - name: conduit-data
-      mountPath: /var/lib/conduit
+      mountPath: /var/lib/conduwuit
       size: 5Gi
